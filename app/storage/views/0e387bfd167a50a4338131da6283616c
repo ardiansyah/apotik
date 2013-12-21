@@ -1,0 +1,26 @@
+
+<?php $__env->startSection('content'); ?>
+    <div class="container">
+
+        <?php if(Session::has('flash_notice')): ?>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="alert alert-success alert-dismissable ac">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <?php echo Session::get('flash_notice'); ?>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <?php echo $__env->make('site.login.login', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            </div>
+
+            
+        </div>
+    </div>
+<?php $__env->stopSection(true); ?>
+
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
